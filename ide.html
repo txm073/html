@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.png">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
+    <link rel="stylesheet" href="https://codemirror.net/theme/monokai.css">
+    <title>IDE</title>
+</head>
+<body>
+    <!-- Menu bar (File, Edit, View etc.) -->
+    <div class="top-bar">
+        <ul>
+            <li>
+                <div class="top-menu-item logo">
+                    <img src="./logo.png" alt="Logo">
+                </div>
+            </li>
+            <li>
+                <div class="top-menu-item">
+                    <p class="dropbtn" onclick="showDropdown('file-dropdown')" id="file-dropdown-lbl">File</p>
+                    <div class="dropdown-content" id="file-dropdown">
+                        <ul>
+                            <li><p>New File</p></li>
+                            <li><p>New Folder</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Open File</p></li>
+                            <li><p>Open Folder</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Save</p></li>
+                            <li><p>Save As</p></li>
+                            <li><p>Save All</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Close Editor</p></li>
+                            <li><p>Close All</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Start Page</p></li>
+                            <li><p>Settings</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Exit</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="top-menu-item">
+                    <p class="dropbtn" onclick="showDropdown('edit-dropdown')" id="edit-dropdown-lbl">Edit</p>
+                    <div class="dropdown-content" id="edit-dropdown">
+                        <ul>
+                            <li><p>Undo</p></li>
+                            <li><p>Redo</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Cut</p></li>
+                            <li><p>Copy</p></li>
+                            <li><p>Paste</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Find</p></li>
+                            <li><p>Replace</p></li>
+                            <li class="break"><hr></li>
+                            <li><p>Indent</p></li>
+                            <li><p>Unindent</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="top-menu-item">
+                    <p class="dropbtn" onclick="showDropdown('view-dropdown')" id="view-dropdown-lbl">View</p>
+                    <div class="dropdown-content" id="view-dropdown">
+                        <ul>
+                            <li><p>New File</p></li>
+                            <li><p>New Folder</p></li>
+                            <li><p>Open File</p></li>
+                            <li><p>Open Folder</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Main page -->
+    <div class="page">
+        <div class="side-bar">
+        </div>
+        <div class="explorer">
+
+        </div>
+        <!-- Text editor and tab bar -->
+        <div class="workspace">
+            <div class="tabbar">         
+            </div>
+            <div class="text-edit" id="text-edit">
+                <textarea class="codemirror-textarea"></textarea>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom status bar -->
+    <div class="status-bar">     
+    </div>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- CodeMirror -->
+    <script type="text/javascript" src="https://codemirror.net/lib/codemirror.js"></script>
+    <script type="text/javascript" src="https://codemirror.net/mode/python/python.js"></script>
+    <script type="text/javascript" src="https://codemirror.net/addon/selection/active-line.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>

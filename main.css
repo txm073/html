@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Raleway:wght@100;300&display=swap');
+
+
+/* Define variables */
+:root {
+    --text-colour: rgb(225, 223, 223);
+    --side-bar-bg: rgb(15, 15, 15);
+    --menu-bg: rgb(27, 26, 25);
+    --menu-bg-hover: rgb(52, 52, 48);
+    --accent-colour: rgb(211, 160, 29);
+    --mainpage-bg: rgb(39, 40, 34);
+}
+
+
+/* Global styles */
+* {
+    font-family: 'Raleway' sans-serif;
+    color: var(--text-colour);
+}
+
+.horizontal ul {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    list-style: none;
+}
+
+.horizontal ul li {
+    padding: 0;
+    margin: 0;
+}
+
+.vertical ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+    list-style: none;
+}
+
+.vertical ul li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Top menu bar (File, Edit, View etc.) */
+.top-bar {
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    background-color: var(--menu-bg);
+    position: absolute;
+    height: 25px;
+    width: 100%;
+}
+
+.top-bar ul {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    list-style: none;
+    display: inline-flex;
+}
+
+.top-bar ul li {
+    height: 100%;
+    padding: 0 5px;
+    margin: 0;
+}
+
+.top-menu-item p {
+    height: 100%;
+    margin: 2px;
+    color: var(--text-colour);
+    font-family: 'Raleway';
+    font-size: 15px;
+    cursor: default;
+}
+
+.top-menu-item img {
+    position: relative ;
+    width: 25px;
+    height: 25px;
+}
+
+.top-bar ul li:hover {
+    background-color: var(--menu-bg-hover);
+}
+
+.top-bar ul li:first-child:hover {
+    background-color: var(--menu-bg);
+}
+
+.dropdown-content {
+    display: none;
+    margin-top: 4px; 
+    margin-left: -5px;
+    background-color: var(--menu-bg);
+    position: absolute;
+    width: 200px;
+    z-index: 10;
+}
+
+.dropdown-content ul {
+    display: block;
+    position: relative;
+    padding: 5px 0;
+}
+
+.dropdown-content ul li {
+    position: relative;
+    padding: 2px 5px;
+}
+
+.dropdown-content ul li p {
+    padding: 2px 5px;
+}
+
+.dropdown-content ul li.break:hover {
+    background-color: var(--menu-bg);
+}
+
+.dropdown-content ul li:hover, .dropdown-content ul li:first-child:hover {
+    background-color: var(--menu-bg-hover);
+}
+
+.dropdown-content ul li:hover p, .dropdown-content ul li:first-child:hover p {
+    color: var(--accent-colour)
+}
+
+
+/* Bottom status bar */
+.status-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: var(--menu-bg);
+    height: 25px;
+    width: 100%;
+    border-top: 1px solid black;
+    z-index: 12;
+}
+
+.vertical-line{
+    width: 2px; 
+    background-color: var(--accent-colour); 
+    height: 100%;
+    float: left; 
+}
+
+.vertical-line p {
+    font-size: 50px;
+}
+ 
+
+/* Side bar */
+.side-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: var(--side-bar-bg);
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+.side-bar ul {
+    list-style: none;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+.side-bar ul li {
+    position: absolute;
+}
+
+.side-bar ul li img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+/* File explorer */
+.explorer {
+    position: absolute;
+    background-color: var(--menu-bg);
+    width: 200px;
+    height: 100%;
+    top: 0;
+    left: 50px;
+    float: left;
+}
+
+
+/* Main page */
+.page {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    bottom: 25px;
+    right: 0;
+    width: 100%;
+    background-color: var(--mainpage-bg);
+    border-top: 1px solid black;
+}
+
+.workspace {
+    position: absolute;
+    top: 0px;
+    left: 250px;;
+    height: 100%;
+    width: calc(100% - 250px);
+    background-color: red;
+}
+
+.tabbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--mainpage-bg);
+}
+
+
+/* Text editor */
+.text-edit {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: var(--mainpage-bg);
+    border-top: 1px solid black;
+}
+
+.text-edit textarea {
+    background-color: var(--mainpage-bg);
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.CodeMirror {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.CodeMirror-activeline-background {
+    background: #e8f2ff;
+}
+
+.CodeMirror-focused .CodeMirror-activeline-background {
+    background: #e8f2ff;
+}
+
+.CodeMirror-gutter {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+
+/* Scrollbars */
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {
+    background-color: var(--mainpage-bg) !important;
+}
+
+/* Firefox */
+.CodeMirror-hscrollbar, .CodeMirror-vscrollbar {
+    scrollbar-color:  var(--menu-bg-hover) var(--mainpage-bg) !important;    
+    scrollbar-width: auto !important;
+}
+
+/* Chrome, Edge, Safari */
+.CodeMirror-hscrollbar::-webkit-scrollbar, .CodeMirror-vscrollbar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar-track, .CodeMirror-vscrollbar::-webkit-scrollbar-track {
+    background: var(--mainpage-bg);
+}
+
+.CodeMirror-hscrollbar::-webkit-scrollbar-thumb, .CodeMirror-vscrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--menu-bg-hover);
+    border: none;
+}
+
+
